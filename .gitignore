@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+**/node_modules/
+jspm_packages/
+
+# Local env files
+.env
+**/.env
+.env.*
+**/.env.*
+!**/.env.example
+!**/.env.sample
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+.nuxt/
+.cache/
+.parcel-cache/
+.tmp/
+*.tsbuildinfo
+
+# Test and tooling output
+coverage/
+.nyc_output/
+.turbo/
+.eslintcache
+
+# Hosting and mobile tooling
+.vercel/
+.expo/
+web-build/
+
+# Local container overrides
+docker-compose.override.yml
+docker-compose.*.override.yml
+
+# Signing keys and certificates
+*.jks
+*.p8
+*.p12
+*.pem
+*.key
+*.mobileprovision
+
+# Supabase CLI temp files
+supabase/.temp/
+**/supabase/.temp/
+server/tmp/
