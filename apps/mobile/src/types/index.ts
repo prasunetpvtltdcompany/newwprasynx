@@ -70,6 +70,7 @@ export interface AttendanceRecord {
   status: 'present' | 'absent' | 'late' | 'leave';
   subject?: string;
   teacher_id?: string;
+  notes?: string;
 }
 
 export interface FeeRecord {
@@ -104,6 +105,13 @@ export interface Assignment {
   due_date: string;
   status: 'active' | 'submitted' | 'graded';
   max_score?: number;
+  submission?: {
+    id?: string;
+    grade?: string | number;
+    feedback?: string;
+    submitted_at?: string;
+    status?: string;
+  };
 }
 
 export interface TimetableEntry {

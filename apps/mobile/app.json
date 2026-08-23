@@ -18,7 +18,9 @@
       "bundleIdentifier": "com.prasynx.mobile"
     },
     "android": {
+      "versionCode": 1,
       "adaptiveIcon": {
+        "foregroundImage": "./src/assets/icon.png",
         "backgroundColor": "#4F46E5"
       },
       "package": "com.prasynx.mobile",
