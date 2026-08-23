@@ -9,6 +9,8 @@ import { getToolDefinitionsForSystemPrompt } from '@/lib/ai/tools';
 import { generateChatCompletionStream } from '@/lib/ai/provider';
 import type { AIContext } from '@/types/ai';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
   try {
     if (!isAIEnabled()) {

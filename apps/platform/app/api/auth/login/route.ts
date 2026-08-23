@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 const BACKENDS: Record<string, string> = {
   admin: process.env.NEXT_PUBLIC_BACKEND_ADMIN || 'http://localhost:4001/api/v2/admin/login',
   management: process.env.NEXT_PUBLIC_BACKEND_MANAGEMENT || 'http://localhost:4002/api/v2/auth/login',

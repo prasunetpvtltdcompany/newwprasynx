@@ -1,9 +1,16 @@
 import OpenAI from 'openai';
 
-const client = new OpenAI({
-  apiKey: process.env.NVIDIA_API_KEY || '',
-  baseURL: process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1',
-});
+let cachedClient: OpenAI | null = null;
+
+function getClient(): OpenAI {
+  if (!cachedClient) {
+    cachedClient = new OpenAI({
+      apiKey: process.env.NVIDIA_API_KEY || 'not-configured',
+      baseURL: process.env.NVIDIA_BASE_URL || 'https://integrate.api.nvidia.com/v1',
+    });
+  }
+  return cachedClient;
+}
 
 const model = process.env.NVIDIA_MODEL || 'meta/llama-3.1-8b-instruct';
 
@@ -11,6 +18,7 @@ export async function generateChatCompletion(
   messages: { role: 'system' | 'user' | 'assistant'; content: string }[],
   options?: { temperature?: number; maxTokens?: number }
 ): Promise<string> {
+  const client = getClient();
   const response = await client.chat.completions.create({
     model,
     messages,
@@ -24,6 +32,7 @@ export async function generateChatCompletionStream(
   messages: { role: 'system' | 'user' | 'assistant'; content: string }[],
   options?: { temperature?: number; maxTokens?: number }
 ): Promise<ReadableStream> {
+  const client = getClient();
   const stream = await client.chat.completions.create({
     model,
     messages,
