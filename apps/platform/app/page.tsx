@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import SiteShell from './components/SiteShell';
 
+const PORTALS_URL = process.env.NEXT_PUBLIC_PORTALS_URL || 'https://prasynx.prasunet.com';
+
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
@@ -727,7 +729,13 @@ export default function Home() {
                       </div>
 
                       {/* CTA */}
-                      <a href={['http://localhost:3002', 'http://localhost:3004', 'http://localhost:3003', 'http://localhost:3006', 'http://localhost:3000/management/login'][i]}
+                      <a href={[
+                        `${PORTALS_URL}/student/login`,
+                        `${PORTALS_URL}/parent/login`,
+                        `${PORTALS_URL}/staff/login`,
+                        `${PORTALS_URL}/jobprovider/login`,
+                        `${PORTALS_URL}/management/login`
+                      ][i]}
                         className="group inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                         style={{ background: `linear-gradient(135deg, ${p.color}, ${p.color}cc)` }}>
                         Explore {p.name}

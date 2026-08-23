@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import PreranaAI from './PreranaAI';
 
-const PORTALS_URL = process.env.NEXT_PUBLIC_PORTALS_URL ?? 'http://localhost:3000';
+const PORTALS_URL = process.env.NEXT_PUBLIC_PORTALS_URL || 'https://prasynx.prasunet.com';
 
 const navLinks = [
   { href: '/', label: 'Home' },

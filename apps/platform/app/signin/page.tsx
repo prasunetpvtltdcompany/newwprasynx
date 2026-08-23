@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, Users, BookOpen, School, ArrowRight, Sparkles, CheckCircle2, ChevronRight } from 'lucide-react';
 import SiteShell from '../components/SiteShell';
 
-const PORTALS_URL = process.env.NEXT_PUBLIC_PORTALS_URL ?? 'http://localhost:3000';
+const PORTALS_URL = process.env.NEXT_PUBLIC_PORTALS_URL || 'https://prasynx.prasunet.com';
 
 const portals = [
   {
