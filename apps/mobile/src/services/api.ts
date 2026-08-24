@@ -21,15 +21,19 @@ const SESSION_KEYS: Record<string, string> = {
   job_provider: 'jobProviderSession',
 };
 
-const API_HOST = process.env.EXPO_PUBLIC_API_HOST || 'localhost';
+const API_BASE =
+  process.env.EXPO_PUBLIC_API_URL ||
+  (process.env.EXPO_PUBLIC_API_HOST
+    ? `http://${process.env.EXPO_PUBLIC_API_HOST}:4000/api`
+    : 'https://prasynx.prasunet.com/api');
 
 const API_URLS: Record<string, string> = {
-  admin: `http://${API_HOST}:4000/api`,
-  management: `http://${API_HOST}:4000/api`,
-  staff: `http://${API_HOST}:4000/api`,
-  student: `http://${API_HOST}:4000/api`,
-  parent: `http://${API_HOST}:4000/api`,
-  job_provider: `http://${API_HOST}:4000/api`,
+  admin: API_BASE,
+  management: API_BASE,
+  staff: API_BASE,
+  student: API_BASE,
+  parent: API_BASE,
+  job_provider: API_BASE,
 };
 
 let currentRole: string | null = null;
