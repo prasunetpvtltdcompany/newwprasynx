@@ -22,7 +22,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
 
-const VOICE_API = process.env.NEXT_PUBLIC_VOICE_API_URL || 'http://localhost:4007/api/voice';
+const VOICE_API = process.env.NEXT_PUBLIC_VOICE_API_URL || (process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}/voice` : '/api/voice');
 
 interface Message {
   role: 'user' | 'assistant' | 'system';

@@ -88,7 +88,7 @@ export default function StaffAttendanceTab({ staffList: staffListInput }: { staf
         // We reuse the teacher attendance history route which resolves user_id appropriately
         const res = await staffAttendanceApi.getAll('');
         const token = auth.getToken() || '';
-        const base = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4002/api';
+        const base = process.env.NEXT_PUBLIC_API_URL || '/api';
         
         const fetchUrl = `${base}/teacher/attendance/${selectedStaffId}`;
         const response = await fetch(fetchUrl, {

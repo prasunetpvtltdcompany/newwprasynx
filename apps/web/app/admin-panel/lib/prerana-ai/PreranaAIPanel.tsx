@@ -16,7 +16,7 @@ import { usePreranaAIStore } from './store';
 
 type Tab = 'chat' | 'voice' | 'tasks' | 'history';
 
-const VOICE_API = process.env.NEXT_PUBLIC_VOICE_API_URL || 'http://localhost:4007/api/voice';
+const VOICE_API = process.env.NEXT_PUBLIC_VOICE_API_URL || (process.env.NEXT_PUBLIC_API_URL ? `${process.env.NEXT_PUBLIC_API_URL}/voice` : '/api/voice');
 
 const roles = [
   { key: 'parent', label: 'Parent', icon: Users, color: '#22C55E', bg: '#22C55E15' },

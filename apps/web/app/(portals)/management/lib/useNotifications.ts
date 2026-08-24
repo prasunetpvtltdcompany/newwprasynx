@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { auth } from './auth';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4002/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || '/api';
 
 interface Notification {
   id: string;

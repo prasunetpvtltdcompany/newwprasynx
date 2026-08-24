@@ -2426,7 +2426,7 @@ export const communicationApiV4 = {
 // ==================== EXPORT (V4 — CSV Downloads) ====================
 async function downloadCSV(endpoint: string, filename: string) {
   const token = auth.getToken() || '';
-  const base = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4002/api';
+  const base = process.env.NEXT_PUBLIC_API_URL || '/api';
   const res = await fetch(`${base}${endpoint}/${orgId()}`, {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
   });
